@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .buy-now-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .buy-now-container img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .buy-now-container input[type="text"], .buy-now-container input[type="email"],.buy-now-container input[type="addr"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .buy-now-container button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+        }
+        .buy-now-container button:hover {
+            background-color: #218838;
+        }
+        .order-confirmation {
+            display: none;
+        }
+        .order-confirmation img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body style="background-color: lightpink;">
+    <div class="buy-now-container"style="background:linear-gradient(lightblue,lightgreen,lightpink,lightblue,lightgreen,lightpink);">
+        <img id="product-image" src="https://tse3.mm.bing.net/th?id=OIP.zAgOIEPl8KndnOsMvNZnQwHaEo&pid=Api&P=0&h=180" alt="Product Image" height="100px" width="100px">
+        <h3 id="product-name">Item:🖤Apple</h3>
+        <p id="product-quantity">Quantity:1kg</p>
+        <p id="product-price">Price:$150</p>
+        
+        <form id="buy-now-form" style="background:linear-gradient(lightpink,lightgreen);">
+            <input type="text" id="customer-name" placeholder="Enter your name" required>
+            <input type="email" id="customer-email" placeholder="Enter your email" required>
+            <input type="addr" id="customer-addr" placeholder="Enter your address" required>
+            <button type="submit">Confirm Order</button>
+        </form>
+
+        <div class="order-confirmation">
+            <img src="https://cdn.dribbble.com/users/189026/screenshots/1930751/confirmation-animation.gif" alt="Order Confirmed">
+            <p>Your order has been confirmed!</p>
+        </div>
+    </div>
+
+    <script>
+        // Get product details from localStorage
+        const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+        if (selectedProduct) {
+            document.getElementById('product-image').src = selectedProduct.image;
+            document.getElementById('product-name').textContent = selectedProduct.name;
+            document.getElementById('product-quantity').textContent = `Quantity: ${selectedProduct.quantity}`;
+            document.getElementById('product-price').textContent = `Price: $${selectedProduct.price}`;
+        }
+
+        // Handle form submission
+        document.getElementById('buy-now-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.querySelector('.order-confirmation').style.display = 'block';
+            document.getElementById('buy-now-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

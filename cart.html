@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        *{
+            margin:0%;
+            padding: 0%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .fruit-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .fruit-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .fruit-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .fruit-item button {
+            background:linear-gradient(violet,lightpink,violet);
+            border: none;
+            border-radius: 0 0 10px 10px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .fruit-item button:hover {
+            background-color: #218838;
+        }
+        .fruit-item h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .fruit-item p {
+            color: #777;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+        header {
+            color: white;
+            background-color: #28a745;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        header h1 {
+            font-size: 1.5em;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #218838;
+        }
+        footer {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer svg {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body style="background-color: lightpink;"></body>
+    <header style="color: white;background:linear-gradient(violet,lightpink,violet);height: 80px;">
+        <h1>..🖤♡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAHE FRUITY LAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🖤♡..</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="items.html">Product</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        </header>
+        <br>
+    <div id="container"></div>
+    <script>
+        let data = JSON.parse(localStorage.getItem("Product id"));
+        let pro = document.getElementById('container');
+        for(item of data){
+            pro.innerHTML+=`<div class="fruit-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.quantity}</p>
+                    <p>Price: $${item.price}</p>
+                    <button onclick="data(${item.id})"><a href="buynow.html">Buy Now</a></button>
+                </div>
+        `;
+    }
+    function buyNow(id) {
+            const selectedProduct = data.find(item => item.id === id);
+            localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+            window.location.href = "buyNow.html";
+        }
+    </script>
+    <footer style="background-color: #28a745;"><center>
+        <p>&copy; 2024 MAHE FRUITY LAND. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>
+            Follow us:
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"><path d="M8.665 16V8.649H6.837V6.535h1.828V4.991c0-1.812 1.09-2.806 2.681-2.806.78 0 1.452.058 1.646.084v1.91h-1.129c-.884 0-1.057.42-1.057 1.036v1.352h2.081l-.271 2.114H10.806V16h-2.141z"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5 9.341-9.334 0-.142 0-.284-.01-.425A6.72 6.72 0 0 0 16 3.542a6.656 6.656 0 0 1-1.889.518 3.281 3.281 0 0 0 1.447-1.817 6.573 6.573 0 0 1-2.084.797A3.273 3.273 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.431 3.261 3.261 0 0 0 1.015 4.362 3.27 3.27 0 0 1-1.485-.41v.041a3.273 3.273 0 0 0 2.623 3.207 3.273 3.273 0 0 1-.862.115 3.22 3.22 0 0 1-.614-.057 3.274 3.274 0 0 0 3.056 2.268A6.57 6.57 0 0 1 1 13.025a9.286 9.286 0 0 0 5.026 1.473"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0c1.838 0 2.05.007 2.762.04.708.032 1.178.146 1.454.245a2.78 2.78 0 0 1 .963.637c.3.3.482.687.637.963.099.276.213.746.245 1.454.033.711.04.923.04 2.761s-.007 2.05-.04 2.762c-.032.708-.146 1.178-.245 1.454a2.78 2.78 0 0 1-.637.963 2.78 2.78 0 0 1-.963.637c-.276.099-.746.213-1.454.245-.711.033-.923.04-2.761.04s-2.05-.007-2.762-.04c-.708-.032-1.178-.146-1.454-.245a2.78 2.78 0 0 1-.963-.637 2.78 2.78 0 0 1-.637-.963c-.099-.276-.213-.746-.245-1.454C.007 10.05 0 9.838 0 8s.007-2.05.04-2.762c.032-.708.146-1.178.245-1.454a2.78 2.78 0 0 1 .637-.963 2.78 2.78 0 0 1 .963-.637c.276-.099.746-.213 1.454-.245C5.95.007 6.162 0 8 0zm0 1.606c-1.813 0-2.008.007-2.717.04-.692.031-1.064.145-1.312.243a1.736 1.736 0 0 0-.61.39c-.24.24-.392.54-.39.61-.097.248-.212.62-.243 1.312-.033.71-.04.904-.04 2.717s.007 2.008.04 2.717c.031.692.145 1.064.243 1.312.032.086.127.348.39.61.24.24.54.392.61.39.248.097.62.212 1.312.243.71.033.904.04 2.717.04s2.008-.007 2.717-.04c.692-.031 1.064-.145 1.312-.243.086-.032.348-.127.61-.39.24-.24.392-.54.39-.61.097-.248.212-.62.243-1.312.033-.71.04-.904.04-2.717s-.007-2.008-.04-2.717c-.031-.692-.145-1.064-.243-1.312-.032-.086-.127-.348-.39-.61a1.736 1.736 0 0 0-.61-.39c-.248-.097-.62-.212-1.312-.243-.71-.033-.904-.04-2.717-.04zM8 3.887a4.113 4.113 0 1 0 0 8.226 4.113 4.113 0 0 0 0-8.226zm0 1.064a3.048 3.048 0 1 1 0 6.096 3.048 3.048 0 0 1 0-6.096zm4.326-.284a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"/></svg></a>
+        </p>          </center>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        #bg_img{
+            background-image: url('./assets/f1.jpg.jpg');
+            height: 100vh;
+            background-size: 100% 100vh;
+            transition: 1s;
+        }
+        #prev{
+           transform: rotate(180deg); 
+        
+        }
+        .canva{
+            position: absolute;
+            bottom: 0;
+            right:0;
+        }
+        .cans{
+            opacity: 0.5;
+        }
+        .jan{
+            opacity:1;
+            border: 4px solid white;
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1250px;
+    margin: 150px auto;
+    padding: 20px;
+    gap: 20px;
+}
+.card-list .card-item {
+    background:pink;
+    padding: 26px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+}
+.card-list .card-item:hover {
+    border: 2px solid #000;
+}
+.card-list .card-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.card-list span {
+    display: inline-block;
+    background: #F7DFF5;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.card-list .iris {
+    background-color: #F7DFF5; 
+    color: #B22485;
+}   
+.card-list .tulip {
+    background-color: #d1e8ff;
+    color: #2968a8;
+}
+.card-list .daisy {
+    background-color: #d6f8d6; 
+    color: #205c20;
+}
+.card-item h3 {
+    color: #000;
+    font-size: 1.438rem;
+    margin-top: 28px;
+    font-weight: 600;
+}
+.card-item .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-35deg);
+    height: 40px;
+    width: 40px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-top: 40px;
+    transition: 0.2s ease;
+}
+.card-list .card-item:hover .arrow  {
+    background: #000;
+    color: #fff;
+    transition: 0.5s; 
+}
+@media (max-width: 1200px) {
+    .card-list .card-item {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .card-list {
+        margin: 0 auto;
+    }
+}
+.page4 {
+  height: 800px;
+  width: 1100px;
+  background-color:pink;
+  margin: 50px;
+  padding: 5px;
+  margin-right: 3px;
+  text-align: center;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-top: 80px;
+  
+}
+
+.i1 {
+  height: 600px;
+  width: 200px;
+  border: 5px solid;
+  border-color:maroon;
+  border-radius: 10px;
+  background-color: rgb(252, 229, 233);
+  margin-left: 25px; 
+  float: left;
+  margin-right: 50px ;
+  margin-top: 100px;
+}
+.i1:hover{
+  transform: scale(1.2);
+}
+
+.i2 {
+  height: 600px;
+  width: 200px;
+  border: 5px solid;
+  border-color: maroon;
+  border-radius: 10px;
+  background-color:rgb(252, 229, 233);
+  margin-left: 25px;
+  align-items: center;
+  float:right;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+.i2:hover{
+  transform: scale(1.2);
+}
+
+.i3 {
+  height: 600px;
+  width: 200px;
+  border: 5px solid;
+  border-color:maroon;
+  border-radius: 10px;
+  background-color:rgb(252, 229, 233);
+  align-items: center;
+  float: right;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+.i3:hover{
+  transform: scale(1.2);
+}
+
+.i4 {
+  height: 600px;
+  width: 200px;
+  border: 5px solid;
+  border-color:maroon;
+  border-radius: 10px;
+  background-color:rgb(252, 229, 233);
+  margin-right: 75px;
+  float:right;
+  margin-top: 100px;
+}
+.i4:hover{
+  transform: scale(1.2);
+}
+
+.img {
+  width: 150px;
+  height: 200px;
+}
+
+.page4 > h2 {
+  text-align: cursive;
+  font-family:cursive;
+  font-size: 50px;
+  color: rgb(252, 229, 233);
+}
+.page4 p {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.msnb {
+  padding: 15px;
+  font-size: 15px;
+  color:antiquewhite;
+  font-family:cursive;
+  background-color:maroon;
+  border-radius: 10px;
+  float:bottom;
+}
+.msnb:hover {
+  background-color:rgba(255, 2, 44, 0.726);
+  transition: 0.7s;
+}
+header {
+            color: white;
+            background-color: #28a745;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        header h1 {
+            font-size: 1.5em;
+        }
+nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #218838;
+        }
+        footer {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer svg {
+            margin: 0 5px;
+        }
+        
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+    </style>
+
+</head>
+<body style="background-color: pink;">
+    <header style="color: white;background-color:#28a745;height: 80px;">
+        <h1>🖤♡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAHE FRUITY LAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🖤♡</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+  
+</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="items.html">Product</a>
+                <a href="cart.html">Cart</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <br>
+    <div id="bg_img">
+        
+        <img id="prev" onclick="prev()" src="./assets/w6.jpeg" height="50px" width="50px">
+        <img id="next"  onclick="next()" src="./assets/w6.jpeg" height="50px" width="50px">
+        <p id="p" style="font-size: 60px; color:black; padding: 50px;">Delicious Apple!!!</p>
+    </div>
+    <div class="canva">
+        <img class="cans jan" src="./assets/f1.jpg.jpg" alt="1" style="height: 100px; width: 100px;">
+        <img class="cans" src="./assets/f2.jpg" alt="2" style="height: 100px; width: 100px;">
+        <img class="cans" src="./assets/f3.jpg" alt="3" style="height: 100px; width: 100px;">
+        <img class="cans" src="./assets/f4.jpg" alt="4" style="height: 100px; width: 100px;">
+    </div>
+    <div class="card-list">
+        
+        <a href="#" class="card-item">
+            <img src="./assets/f1.jpg.jpg" alt="Card Image" class="imgs">
+            <span class="apple">Apple</span>
+            <h3>&hearts;“An apple a day keeps the doctor away,
+                but if the doctor is cute, forget the fruit!” </h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="./assets/f2.jpg" alt="Card Image">
+            <span class="tulip">Dragon Fruit</span>
+            <h3>&hearts;“Dragon fruit's vibrant hues are a feast for the eyes,
+                A taste of the exotic, where flavor and health intertwine.”</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="./assets/f3.jpg" alt="Card Image">
+            <span class="daisy">Grapes</span>
+            <h3>&hearts;“Grapes on the vine, clusters of delight,
+                Tiny orbs of sweetness, perfect day or night.”</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+    </div> -->
+    <div class="page4">
+        <h2 style="color: maroon;">MOST LOVED FRUITS</h2>
+      
+        <div class="i1">
+          <h4>POMEGRANATE</h4>
+          <p>“Pomegranate's ruby seeds, jewels of nutrition,
+            Bursting with flavor, a healthful tradition.”</p>
+          <img src="./assets/f4.jpg" alt="img1" class="img"/><br><br><br>
+          <a href="#" class="msnb">View More</a>
+        </div>
+        <div class="i2">
+          <h4>STRAWBERRY</h4>
+          <p>“Strawberries, red and sweet, nature's candy divine,
+            A taste of summer, fresh from the vine........”</p>
+          <img src="./assets/f5.jpg" alt="img2" class="img" /><br><br><br>
+          <a href="#" class="msnb">View More</a>
+        </div>
+        <div class="i3">
+          <h4>GRAPES</h4>
+          <p>“Grapes on the vine, clusters of delight,
+            Tiny orbs of sweetness, perfect day or night.........”</p>
+          <img src="./assets/f3.jpg" alt="img3" class="img" /><br><br><br>
+          <a href="#" class="msnb">View More</a>
+        </div>
+        <div class="i4">
+          <h4>DRAGON FRUIT</h4>
+          <p>“Dragon fruit's vibrant hues are a feast for the eyes,
+            A taste of the exotic, where flavor and health intertwine.......”</p>
+          <img src="./assets/f2.jpg" alt="img4" class="img" /><br><br><br>
+          <a href="#" class="msnb">View More</a>
+        </div>
+      </div> -->
+    <script>
+        let i = 0;
+        let imag = document.getElementsByClassName('cans');
+        console.log(imag);
+
+        let img = ['./assets/f1.jpg.jpg', './assets/f2.jpg', './assets/f3.jpg', './assets/f4.jpg'];
+        const bg = document.getElementById('bg_img');
+         
+        let txt = ['Delicious Apple!!!', 'Tasty Dragon Fruit!', 'Flavours Grapes !!', 'Amazing Pomegranate',];
+        let text = document.getElementById('p');
+
+        function Text() {
+            text.innerHTML = txt[i];
+        }
+
+        function next() {
+            imag[i].classList.remove('jan');
+            i++;
+            if (i === img.length) {
+                i = 0;
+            } 
+            Text();
+            imag[i].classList.add('jan');
+            bg.style.backgroundImage = 'url("' + img[i] + '")';           
+        }
+
+        function prev() {
+            imag[i].classList.remove('jan');
+            i--;
+            if (i === -1) {
+                i = img.length - 1;
+            } 
+            Text();
+            imag[i].classList.add('jan');
+            bg.style.backgroundImage = 'url("' + img[i] + '")'; 
+        }
+//         const body = document.body;
+// let mybtn=document.getElementById('btn');
+// body.addEventListener("click", () => {
+ 
+//   if (body.style.backgroundColor === "black" || body.style.backgroundColor === "") {
+   
+//     body.style.backgroundColor = "pink";
+//   } else {
+//     body.style.backgroundColor = "black";
+//   }
+// });
+
+
+    </script>
+    <footer style="background-color: #28a745;"><center>
+        <p>&copy; 2024 MAHE FRUITY LAND. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>
+            Follow us:
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"><path d="M8.665 16V8.649H6.837V6.535h1.828V4.991c0-1.812 1.09-2.806 2.681-2.806.78 0 1.452.058 1.646.084v1.91h-1.129c-.884 0-1.057.42-1.057 1.036v1.352h2.081l-.271 2.114H10.806V16h-2.141z"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5 9.341-9.334 0-.142 0-.284-.01-.425A6.72 6.72 0 0 0 16 3.542a6.656 6.656 0 0 1-1.889.518 3.281 3.281 0 0 0 1.447-1.817 6.573 6.573 0 0 1-2.084.797A3.273 3.273 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.431 3.261 3.261 0 0 0 1.015 4.362 3.27 3.27 0 0 1-1.485-.41v.041a3.273 3.273 0 0 0 2.623 3.207 3.273 3.273 0 0 1-.862.115 3.22 3.22 0 0 1-.614-.057 3.274 3.274 0 0 0 3.056 2.268A6.57 6.57 0 0 1 1 13.025a9.286 9.286 0 0 0 5.026 1.473"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0c1.838 0 2.05.007 2.762.04.708.032 1.178.146 1.454.245a2.78 2.78 0 0 1 .963.637c.3.3.482.687.637.963.099.276.213.746.245 1.454.033.711.04.923.04 2.761s-.007 2.05-.04 2.762c-.032.708-.146 1.178-.245 1.454a2.78 2.78 0 0 1-.637.963 2.78 2.78 0 0 1-.963.637c-.276.099-.746.213-1.454.245-.711.033-.923.04-2.761.04s-2.05-.007-2.762-.04c-.708-.032-1.178-.146-1.454-.245a2.78 2.78 0 0 1-.963-.637 2.78 2.78 0 0 1-.637-.963c-.099-.276-.213-.746-.245-1.454C.007 10.05 0 9.838 0 8s.007-2.05.04-2.762c.032-.708.146-1.178.245-1.454a2.78 2.78 0 0 1 .637-.963 2.78 2.78 0 0 1 .963-.637c.276-.099.746-.213 1.454-.245C5.95.007 6.162 0 8 0zm0 1.606c-1.813 0-2.008.007-2.717.04-.692.031-1.064.145-1.312.243a1.736 1.736 0 0 0-.61.39c-.24.24-.392.54-.39.61-.097.248-.212.62-.243 1.312-.033.71-.04.904-.04 2.717s.007 2.008.04 2.717c.031.692.145 1.064.243 1.312.032.086.127.348.39.61.24.24.54.392.61.39.248.097.62.212 1.312.243.71.033.904.04 2.717.04s2.008-.007 2.717-.04c.692-.031 1.064-.145 1.312-.243.086-.032.348-.127.61-.39.24-.24.392-.54.39-.61.097-.248.212-.62.243-1.312.033-.71.04-.904.04-2.717s-.007-2.008-.04-2.717c-.031-.692-.145-1.064-.243-1.312-.032-.086-.127-.348-.39-.61a1.736 1.736 0 0 0-.61-.39c-.248-.097-.62-.212-1.312-.243-.71-.033-.904-.04-2.717-.04zM8 3.887a4.113 4.113 0 1 0 0 8.226 4.113 4.113 0 0 0 0-8.226zm0 1.064a3.048 3.048 0 1 1 0 6.096 3.048 3.048 0 0 1 0-6.096zm4.326-.284a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"/></svg></a>
+        </p>          </center>
+    </footer>
+</body>
+</html>
